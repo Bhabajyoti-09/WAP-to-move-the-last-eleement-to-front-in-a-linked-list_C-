@@ -1,0 +1,15 @@
+class Solution{
+public:
+    ListNode *moveToFront(ListNode *head){
+        if(head->next==NULL) return head;
+        ListNode* last=head->next,*secondlast=head;
+        while(last->next){
+            last=last->next;
+            secondlast=secondlast->next;
+        }
+        secondlast->next=NULL;
+        last->next=head;
+        return last;
+        
+    }
+};
